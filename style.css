@@ -1,0 +1,633 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+/* setup */
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 500px;
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  min-height: 2000px;
+}
+
+/* navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background-color: #0a2782;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 8px;
+  z-index: 23;
+  padding: 17px;
+}
+
+nav .logo img {
+  max-width: 80px;
+  margin-top: 12px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 40%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: large;
+  margin: 0 1rem;
+}
+nav ul li a {
+  color: #ebffff;
+  font-size: 1em;
+  text-decoration: none;
+  font-weight: 900;
+}
+nav ul li a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid aliceblue;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+nav ul li a:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/* navbar */
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2; /* Menambahkan z-index agar hamburger menu muncul di atas elemen.home */
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 45px;
+  height: 25px;
+  top: -5px;
+  left: -12px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3; /* Menambahkan z-index agar input checkbox berada di atas hamburger menu */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2) {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.menu-toggle span:last-child {
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+
+/* Atur posisi hamburger menu ketika input checkbox dicek pada ukuran mobile */
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  -webkit-transform: rotate(45deg) translate(-1px, -1px);
+  -ms-transform: rotate(45deg) translate(-1px, -1px);
+  transform: rotate(45deg) translate(-1px, -1px);
+  z-index: 4; /* Menambahkan z-index agar hamburger menu tetap di atas.home h4 dan p */
+}
+
+.menu-toggle input:checked ~ span:last-child {
+  background-color: white;
+  -webkit-transform: rotate(-45deg) translate(-1px, 0);
+  -ms-transform: rotate(-45deg) translate(-1px, 0);
+  transform: rotate(-45deg) translate(-1px, 0);
+  z-index: 4; /* Menambahkan z-index agar hamburger menu tetap di atas.home h4 dan p */
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+/* homee section */
+.home {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: justify;
+}
+.home .content {
+  padding: 2rem 7%;
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+.home .content .header h4 {
+  color: #000000;
+  font-size: 4em;
+  display: inline;
+}
+
+.home .content .line {
+  width: 100%; /* Menjadikan lebar garis 100% untuk membentang sepanjang lebar */
+  border: none; /* Menghapus border bawaan elemen <hr> */
+  border-top: 1px solid #1f1f1f; /* Menambahkan garis tipis dengan warna yang sesuai */
+  margin: 0;
+  padding: 0;
+}
+
+.home .content p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 100;
+  color: #333333;
+  margin-top: 80px;
+}
+.materi img {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  left: -10px;
+}
+.materi .materiinti {
+  position: relative;
+  background-color: rgb(0, 98, 196);
+  padding: 20px;
+  margin-top: 0px;
+  border-radius: 8px;
+  left: -9px;
+}
+
+.materi-fungsi {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.materi-fungsi h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.materi-fungsi p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+/* structure section */
+.Structure {
+  min-height: 190vh;
+}
+.Structure h2 {
+  text-align: center;
+  color: #0f0f43;
+  margin-top: 200px;
+  margin-bottom: 90px;
+  font-size: 2em;
+}
+.Structure .struktur {
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+/* galery start */
+.galery {
+  min-height: 200vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.galery h2 {
+  text-align: center;
+  color: #323232;
+  font-size: 2em;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.galery .gambar {
+  display: block;
+  width: 800px;
+  height: 1050px;
+  border: 10px solid rgb(0, 201, 219);
+  position: absolute;
+  top: 150px;
+  left: 500px;
+}
+.galery .gambar .big {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.galery .gambar .small .sml {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 200px;
+  float: left;
+  border: 2px solid rgb(0, 201, 219);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sml:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  -webkit-animation: fadeIn 0.5s forwards;
+  animation: fadeIn 0.5s forwards;
+}
+
+.active {
+  opacity: 0.5;
+}
+.kontak {
+  color: aliceblue;
+  text-align: center;
+  margin-top: 50px; /* Adjust the margin as needed */
+  margin-bottom: 0;
+}
+
+.kontak .box {
+  left: 6.5%;
+  position: relative;
+  top: 100px;
+  background-color: #0a2782;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  width: 85%;
+  border-radius: 8px;
+}
+
+.kontak .box h1 {
+  margin-bottom: 20px;
+  position: relative;
+  top: -150px;
+}
+
+.kontak .cont {
+  font-size: larger;
+  top: -90px;
+  position: relative;
+  font-family: "Roboto", sans-serif; /* Font family */
+}
+
+.kontak .cont ul {
+  list-style: none;
+  padding: 0;
+}
+
+.kontak .cont ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.kontak .cont li a:hover {
+  color: #ff5500;
+}
+/* footer */
+.footer {
+  margin-top: 50px;
+}
+.footer .footbox {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: -8px;
+  position: relative;
+  top: -20px;
+  background-color: #0a2782;
+  padding-top: 300px;
+  padding-bottom: 100px !important;
+  width: 100%;
+  border-radius: 8px;
+}
+.footer .footbox .insta {
+  position: relative;
+  top: -110px;
+  margin-right: 90px;
+  max-width: 70px;
+}
+.footer .footbox .lokasi {
+  position: relative;
+  top: -110px;
+  max-width: 70px;
+  height: 70px;
+}
+.footer .footbox .email {
+  margin-left: 90px;
+  position: relative;
+  top: -102px;
+  max-width: 70px;
+}
+/* responsive break point tablet */
+@media screen and (max-width: 800px) {
+  body {
+    min-height: 500px;
+  }
+  nav ul {
+    width: 50%;
+    font-size: 0.8em;
+  }
+  nav .logo img {
+    max-width: 60px;
+  }
+  .galery {
+    min-height: 200vh;
+  }
+  .galery .gambar {
+    top: -300px;
+    border: aqua solid 5px;
+    position: relative;
+    left: 90px;
+    width: 600px;
+    height: 790px;
+  }
+  .galery .gambar .small .sml {
+    max-width: 100%;
+    width: 150px;
+  }
+  .Structure {
+    min-height: 100vh;
+  }
+  .Structure h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  .Structure .struktur {
+    max-width: 60%;
+  }
+  .home .content .header h4 {
+    font-size: 2.5rem;
+  }
+  .home .content p {
+    margin-top: 80px;
+    font-size: 1.5rem;
+  }
+  .kontak .box {
+    height: 90px;
+  }
+  .kontak .box h1 {
+    font-size: 0.7em;
+  }
+  .kontak .box .cont li a {
+    font-size: medium;
+  }
+  .kontak .box .li {
+    font-size: medium;
+  }
+  .kontak .box iframe {
+    width: 400px;
+    height: 300px;
+  }
+  .materiinti {
+    margin-top: 0;
+  }
+  .materi img {
+    display: block;
+    max-width: 100%;
+    margin-top: 0%;
+    top: 10px;
+    margin-bottom: 0;
+  }
+  .materi-fungsi {
+    font-size: 0.7em;
+  }
+  .footer .footbox {
+    padding: 90px;
+  }
+  .footer .footbox .insta {
+    max-width: 50px;
+    position: relative;
+    top: 20px;
+    left: -100px;
+  }
+  .footer .footbox .email {
+    max-width: 60px;
+    position: relative;
+    top: 20px;
+    right: 80px;
+  }
+  .footer .footbox a .lokasi {
+    height: 50;
+    max-width: 50px;
+    position: relative;
+    top: 20px;
+    left: -80px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body {
+    min-height: 500px;
+  }
+  nav ul {
+    width: 50%;
+    font-size: 0.8em;
+  }
+  nav .logo img {
+    position: relative;
+    left: -55px;
+  }
+  .menu-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 4;
+  }
+  .menu-toggle input {
+    z-index: 5;
+  }
+  .home .content h4 {
+    font-size: 2rem;
+  }
+  .home .content p {
+    font-size: 1em;
+    text-align: justify;
+  }
+  .galery {
+    min-height: 100vh;
+  }
+  .galery h2 {
+    position: relative;
+    top: -300px;
+    font-size: 1.3em;
+  }
+  .galery .gambar {
+    position: relative;
+    top: 0px;
+    left: -60px;
+    width: 400px;
+    height: 525px;
+  }
+  .galery .gambar .small .sml {
+    max-width: 100%;
+    width: 100px;
+  }
+  .Structure {
+    min-height: 100vh;
+    font-size: 1rem;
+  }
+  .Structure .struktur {
+    max-width: 90%;
+  }
+  .materi-fungsi {
+    font-size: 10px;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 40%;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #0a2782;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 4;
+    -webkit-transform: translatex(100%);
+    -ms-transform: translatex(100%);
+    transform: translatex(100%);
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    opacity: 0;
+    transform: translatex(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav ul.slide {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.footer .footbox {
+  padding: 40px;
+}
+.footer .footbox .insta {
+  max-width: 40px;
+  position: relative;
+  top: 20px;
+  left: -100px;
+}
+.footer .footbox .email {
+  max-width: 50px;
+  position: relative;
+  top: 20px;
+  right: 0px;
+}
+.footer .footbox a .lokasi {
+  height: 40px;
+  max-width: 40px;
+  position: relative;
+  top: 20px;
+  left: -40px;
+}
